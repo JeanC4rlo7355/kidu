@@ -1,0 +1,18 @@
+CREATE DATABASE nodejs_base1;
+
+USE nodejs_base1;
+
+CREATE TABLE users(
+    id BIGINT AUTO_INCREMENT,
+    email VARCHAR(180) NOT NULL,
+    name VARCHAR(90) NOT NULL,
+    lastname VARCHAR(90) NOT NULL,
+    phone VARCHAR(90) NOT NULL,
+    image VARCHAR(255) NULL,
+    password VARCHAR(90) NOT NULL,
+    created_at TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    UNIQUE KEY email (email),
+    UNIQUE KEY phone (phone)
+);
